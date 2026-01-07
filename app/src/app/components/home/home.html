@@ -1,0 +1,16 @@
+@if (userData | async; as data){
+  <h1>{{data.username}}</h1>
+  <p>{{data.shortBio}}</p>
+
+  <div class="links">
+    <a href="">GitHub</a>
+    <a href="">LinkedIn</a>
+  </div>
+
+  <img [src]="data.image?.url" alt="profile picture">
+}
+@else {
+  <div>
+    <p>Loading...</p>
+  </div>
+}

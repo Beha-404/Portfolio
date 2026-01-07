@@ -1,0 +1,10 @@
+<form #f="ngForm" (ngSubmit)="sendEmail(f)">
+
+    <input type="text" placeholder="Username" name="username" [(ngModel)]="model.username"> 
+    <input type="text" placeholder="Email" name="email" [(ngModel)]="model.email">
+    <input type="text" placeholder="Subject" name="subject" [(ngModel)]="model.subject">
+    <textarea type="text" placeholder="Message" name="message" [(ngModel)]="model.message"></textarea>
+
+    <button type="submit" [disabled]="isSending">{{isSending ? "Sending..." : "Send"}}</button>
+    
+</form>
