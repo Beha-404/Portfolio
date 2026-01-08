@@ -1,7 +1,12 @@
+html{
+    background-color: black;
+}
+
 .navbar{
     display: flex;
     align-items: end;
     justify-content: right;
+
 }
 
 .navbar a{

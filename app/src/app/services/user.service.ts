@@ -21,14 +21,16 @@ const userQuery = gql`
   providedIn: 'root',
 })
 export class UserService {
+  
   constructor(private apollo: Apollo) { }
 
   getData(): Observable<User> {
     return this.apollo
-      .watchQuery<{ abouts: any[] }>({ query: userQuery })
+      .watchQuery<any>({ query: userQuery })
       .valueChanges
       .pipe(
-        map(response => response.data?.abouts?.[0] ?? null)
+        map(
+          response => response.data?.abouts?.[0] ?? null)
       );
   }
 }

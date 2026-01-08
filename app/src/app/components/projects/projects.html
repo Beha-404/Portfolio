@@ -1,0 +1,16 @@
+@if(projectData | async; as data){
+    @for (item of data; track $index) 
+    {
+        <div class="data">
+            <h1>{{item.title}}</h1>
+            <p>{{item.description}}</p>
+            <a [href]="item.link">Repository link</a>
+            <img [src]="item.image.url" alt="picture">
+        </div>
+    }
+}
+
+@else 
+{
+    <p>Loading....</p>
+}
